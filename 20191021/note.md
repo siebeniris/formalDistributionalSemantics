@@ -75,6 +75,7 @@ It is not always possible to learn the cardinalities from distributional data. T
 a toy vector with only four dimnensions for the concept *horse*
 
 | a\_mammal|1|
+|---|---|
 |has\_four\_legs |0.95|
 |is\_brown|0.35|
 |is\_scaly|0|
@@ -97,4 +98,18 @@ a toy vector with only four dimnensions for the concept *horse*
 ### Experimental setup
 
 * To map from one semantic representation to another, we learn a function _f_ : __DS__ -> __MT__ that transforms a distributional semantic vector for a concept to its model-theoretic equivalent.
+
+* we learn the mappings as linear relationship between the distributional representation of a word and its model-theoretic representation.
+(coefficients of the function using multivariate partial least squares regression PLSR as implemented in the R pls package)
+
+* Distribution of training/test items for each mt semantic space
+
+|space | #train *vec.*| #test *vec.* | #dims | #test *inst.*|
+|---|---|---|---|---|
+|MT_{QMR}|400|141|2172|1570|
+|MT_{AD}|60|12|54|648|
+|MT_{QMR+AD}|410|145|2193|1595|
+
+
+## Results
 
