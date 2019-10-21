@@ -28,6 +28,11 @@ generate natural language quantifiers from such vectors.
 	An additional Label KIND, for usages of the concept as a kind, where quantification does not apply (e.g., beaver symbol-of-Canada). 
 	cohen kappa = 0.59
 
+	541 concepts covering living/non-living entities
+
+	a set of 7257 concept-feature pairs such as *air-plane used-for-passengers*
+
+
 	6156 instances. an average of 11 features per concept 
 
 
@@ -70,7 +75,6 @@ It is not always possible to learn the cardinalities from distributional data. T
 a toy vector with only four dimnensions for the concept *horse*
 
 | a\_mammal|1|
-|---|---|
 |has\_four\_legs |0.95|
 |is\_brown|0.35|
 |is\_scaly|0|
@@ -82,4 +86,15 @@ a toy vector with only four dimnensions for the concept *horse*
 		* ALL -> 1, MOST -> 0.95, SOME -> 0.35, FEW -> 0.05, NO -> 0
 			(These values correspond to the weights giving the best inter-annotator agreement in Herbelot and Vecchi (2015), when calculating weighted Cohen's kappa on QMR)
 
+	* a concept is represented as a vector in which the dimensions are features (has buttons, is green), and the values of the vectors along each dimension are quantifiers.
+
+* 3 models:
+	* MT_{QMR} McRae-based model-theoretic space, contains 541 conepts
+	* MT_{AD} 
+	* merged MT_{QMR+AD} 555 unique concepts
+
+
+### Experimental setup
+
+* To map from one semantic representation to another, we learn a function _f_ : __DS__ -> __MT__ that transforms a distributional semantic vector for a concept to its model-theoretic equivalent.
 
